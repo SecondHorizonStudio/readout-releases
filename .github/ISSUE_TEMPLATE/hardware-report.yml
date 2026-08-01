@@ -1,0 +1,62 @@
+name: Hardware report
+description: Tell us how Readout behaves on your Mac — especially fan control on M3/M4 and newer
+title: "[hardware] "
+labels: ["hardware-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks — this is how the compatibility list gets built.
+
+        Fan control writes to different chip registers depending on your Mac's
+        generation. The M1/M2 path is verified on real hardware; the M3/M4+
+        path is implemented but has never been run on a physical machine.
+        Reports either way are useful.
+  - type: input
+    id: mac
+    attributes:
+      label: Which Mac?
+      description: Apple menu → About This Mac
+      placeholder: MacBook Pro 14" (M4 Pro, 2024)
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: "26.5"
+    validations:
+      required: true
+  - type: dropdown
+    id: fan-control
+    attributes:
+      label: Fan control
+      options:
+        - Works — fans respond to Manual/Curve
+        - Doesn't work — fans ignore it
+        - Partly works (explain below)
+        - Haven't tried it
+    validations:
+      required: true
+  - type: textarea
+    id: probe
+    attributes:
+      label: Probe output
+      description: |
+        Paste the output of this command — it lists your sensors and fans.
+        Nothing personal is included.
+      value: |
+        <details><summary>/Applications/Readout.app/Contents/MacOS/Readout --probe</summary>
+
+        ```
+        paste here
+        ```
+
+        </details>
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: Sensor names that look wrong, widgets that misbehave, whatever you noticed.

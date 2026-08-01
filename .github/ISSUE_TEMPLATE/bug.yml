@@ -1,0 +1,31 @@
+name: Bug report
+description: Something's broken or behaving oddly
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you expected, and what you got instead.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: |
+        **Settings → Health → Copy diagnostics**, then paste here. It includes
+        the app version, your macOS version, which sensors are working, and a
+        summary of any recorded failures. Nothing leaves your machine except
+        what you paste.
+      render: text
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Readout version
+      placeholder: "0.3.0"
+    validations:
+      required: true
