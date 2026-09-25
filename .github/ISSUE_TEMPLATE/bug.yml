@@ -15,7 +15,8 @@ body:
     attributes:
       label: Diagnostics
       description: |
-        **Settings → Health → Copy diagnostics**, then paste here. It includes
+        **Settings → Health → Copy diagnostics**, then paste here
+        (**Report a problem…** in the same place fills this in for you). It includes
         the app version, your macOS version, which sensors are working, and a
         summary of any recorded failures. Nothing leaves your machine except
         what you paste.
@@ -26,6 +27,6 @@ body:
     id: version
     attributes:
       label: Readout version
-      placeholder: "0.3.0"
+      placeholder: "1.1.0"
     validations:
       required: true

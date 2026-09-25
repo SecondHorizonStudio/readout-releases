@@ -1,12 +1,12 @@
 name: Hardware report
-description: Tell us how Readout behaves on your Mac — especially fan control on M3/M4 and newer
+description: Tell us how Readout behaves on your Mac, especially fan control on M3/M4 and newer
 title: "[hardware] "
 labels: ["hardware-report"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks — this is how the compatibility list gets built.
+        Thanks. This is how the compatibility list gets built.
 
         Fan control writes to different chip registers depending on your Mac's
         generation. The M1/M2 path is verified on real hardware; the M3/M4+
@@ -32,8 +32,8 @@ body:
     attributes:
       label: Fan control
       options:
-        - Works — fans respond to Manual/Curve
-        - Doesn't work — fans ignore it
+        - "Works: fans respond to Manual/Curve"
+        - "Doesn't work: fans ignore it"
         - Partly works (explain below)
         - Haven't tried it
     validations:
@@ -41,12 +41,13 @@ body:
   - type: textarea
     id: probe
     attributes:
-      label: Probe output
+      label: Compatibility report
       description: |
-        Paste the output of this command — it lists your sensors and fans.
-        Nothing personal is included.
+        Paste the output of this command. It lists your chip, sensors and
+        fans, and which code path each part of Readout took. Nothing
+        personal is included.
       value: |
-        <details><summary>/Applications/Readout.app/Contents/MacOS/Readout --probe</summary>
+        <details><summary>/Applications/Readout.app/Contents/MacOS/Readout --compat</summary>
 
         ```
         paste here
